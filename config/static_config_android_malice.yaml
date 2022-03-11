@@ -1,0 +1,130 @@
+TrendMicro:
+  initial_scrape:
+    search_link: 'https://blog.trendmicro.com/trendlabs-security-intelligence?s=android+malice'
+    page_links_xpath: '//div[@class="post-title"]//a/@href'
+    next_page_xpath: '//a[contains(text(), " › ")]/@href'
+    max_pages_to_scrape: 300
+  blog_scrape:
+    title_xpath: '//h1//text()'
+    date_xpath: '//meta[@property="article:published_time"]//@content'
+    date_format: '%Y-%m-%d'
+    parse_date_string: 10
+    blog_paragraphs_xpath: '//div[@class="post-text"]//text()[not(ancestor::a) or not("yarpp-related")]'
+    key_words: 'android,malice'
+Mcafee:
+  initial_scrape:
+    search_link: 'https://securingtomorrow.mcafee.com/?s=android+malice'
+    page_links_xpath: '//h3//a//@href'
+    next_page_xpath: '//a[@class="next page-numbers"]//@href'
+    max_pages_to_scrape: 300
+  blog_scrape:
+    title_xpath: '//div[@class="container-fluid"]//h1//text()'
+    date_xpath: '//meta[@property="article:published_time"]//@content'
+    date_format: '%Y-%m-%d'
+    parse_date_string: 10
+    blog_paragraphs_xpath: '//main[@id="main"]//text()'
+    key_words: 'android,malice'
+ESET:
+  initial_scrape:
+    search_link: 'https://www.welivesecurity.com/?s=android+malice'
+    page_links_xpath: '//section[@id="news-feed"]//h2//a//@href'
+    next_page_xpath: '//a[@class="nextpostslink"]//@href'
+    max_pages_to_scrape: 300
+  blog_scrape:
+    title_xpath: '//h1//text()'
+    date_xpath: '//div[@class="post-meta"]//time//text()'
+    date_format: '%d %b %Y - %I:%M%p'
+    blog_paragraphs_xpath: '//div[@class="content"]//text()'
+    key_words: 'android,malice'
+PandaSecurity:
+  initial_scrape:
+    search_link: 'https://www.pandasecurity.com/mediacenter/?s=android+malice'
+    page_links_xpath: '//h2//a//@href'
+    next_page_xpath: '//a[@class="next page-numbers"]//@href'
+    max_pages_to_scrape: 300
+  blog_scrape:
+    title_xpath: '//div[@class="overlay-content"]//h1//text()'
+    date_xpath: '//div[@class="overlay-content"]//ul[@class="post-meta"]//time//@datetime'
+    date_format: '%Y-%m-%d'
+    parse_date_string: 10
+    blog_paragraphs_xpath: '//div[@class="content"]//text()'
+    key_words: 'android,malice'
+Microsoft:
+  initial_scrape:
+    search_link: 'https://blogs.microsoft.com/?s=android+malice'
+    page_links_xpath: '//div[@class="m-preview-content"]//a[@class="f-post-link"]//@href'
+    next_page_xpath: '//a[@aria-label="Next Page"]//@href'
+    max_pages_to_scrape: 300
+  blog_scrape:
+    title_xpath: '//h1//text()'
+    date_xpath: '//p//time//@datetime'
+    date_format: '%Y-%m-%d'
+    blog_paragraphs_xpath: '//div[@class="entry-content m-blog-content"]//p//text()'
+    key_words: 'android,malice'
+FireEye:
+  initial_scrape:
+    search_link: 'https://www.fireeye.com/search.html?q=android+malice'
+    page_links_xpath: '//p[@class="a03_url" and contains(text(), "/blog")]//text()'
+    next_page_xpath: '//li[@class="a04_item a04_item-next"]//a//@href'
+    max_pages_to_scrape: 300
+  blog_scrape:
+    title_xpath: '//h1[@itemprop="headline"]//text()'
+    date_xpath: '//time[@class="entry-date"]//text()'
+    date_format: '%B %d, %Y'
+    blog_paragraphs_xpath: '//div[@class="entrytext section"]//p//text()'
+    key_words: 'android,malice'
+
+#FSecure: search engine keeps failing
+#  initial_scrape:
+#    search_link: 'https://labsblog.f-secure.com/?s=android+malice'
+#    page_links_xpath: '//a[@class="archive-headline"]//@href'
+#    next_page_xpath: '//a[@class="next page-numbers"]//@href'
+#    max_pages_to_scrape: 300
+#  blog_scrape:
+#    title_xpath: '//h3[@class="latestpostheadline zerotop"]//text()'
+#    date_xpath: '//meta[@property="article:published_time"]//@content'
+#    date_format: '%Y-%m-%d'
+#    parse_date_string: 10
+#    blog_paragraphs_xpath: '//div[@class="col-lg-8 col-md-7 col-sm-6 col-xs-12"]//p//text()[not(ancestor::a)]'
+#    key_words: 'android,malice'
+#SentinelOne: to add
+#  initial_scrape:
+#    search_link: 'https://www.sentinelone.com/?s=android+malice'
+#    page_links_xpath: '//article//a//@href'
+#    next_page_xpath: '//a[@class="next page-numbers outline"]//@href'
+#    max_pages_to_scrape: 300
+#  blog_scrape:
+#    title_xpath: '//div[@class="heading"]//h1//text()'
+#    date_xpath: '//div[@class="blog-frame dark-blue"]//time//@datetime'
+#    date_format: '%Y-%m-%d'
+#    blog_paragraphs_xpath: '//div[@class="text-blog"]//text()'
+#    key_words: 'android,malice'
+
+#EndGame: now elastic
+#  initial_scrape:
+#    search_link: 'https://www.endgame.com/search/node/android%20malice'
+#    page_links_xpath: '//h3[@class="title"]//a//@href'
+#    next_page_xpath: '//a[contains(text(), "next ›")]/@href'
+#    max_pages_to_scrape: 300
+#  blog_scrape:
+#    title_xpath: '//h1[@class="blog-page-post-title font-second"]//text()'
+#    date_xpath: '//span[@class="ml-10 post-date"]//text()'
+#    date_format: '%B %d, %Y'
+#    blog_paragraphs_xpath: '//div//p//text()'
+#    key_words: 'android,malice'
+
+#Comodo:
+#  initial_scrape:
+#    search_link: 'https://blog.comodo.com/?s=android%20malice'
+#    page_links_xpath: '//div[@class="article-tiser"]//span//a//@href'
+#    next_page_xpath: '//a[@class="nextpostslink"]//@href'
+#    max_pages_to_scrape: 300
+#  blog_scrape:
+#    title_xpath: '//h1[@id="page-title"]//text()'
+#    date_xpath: '//meta[@property="article:published_time"]//@content'
+#    parse_date_string: 10
+#    date_format: '%Y-%m-%d'
+#    blog_paragraphs_xpath: '//div[@class="article-content"]//text()'
+#    key_words: 'android,malice'
+
+

@@ -1,0 +1,271 @@
+#Symantec:
+#  search_link: 'https://www.symantec.com/blogs/threat-intelligence'
+#  max_timeout: 20
+#  max_page_limit: 100
+#  suitable_page_wait_time: 15
+#  search_action_config:
+#    wait_five_seconds:
+#      action: 'wait'
+#      element_value: 5
+#    click_cookies:
+#      action: 'click'
+#      element_xpath: '//button[@id="onetrust-accept-btn-handler"]'
+#    wait_five_more_seconds:
+#      action: 'wait'
+#      element_value: 5
+#    click_and_fill_search_box:
+#      action: 'click and fill'
+#      element_xpath: '//div[@class="form-item"]//input[@name="search"]'
+#      element_value: 'android malicious'
+#    click_search:
+#      action: 'click'
+#      element_xpath: '//div[@class="form-submit"]//button'
+#  page_scrape_config:
+#    page_links_xpath: '//div[@class="result-items"]//a[@class="blog-teaser__link"]//@href'
+#    next_page_xpath: '//a[@class="btn btn--more"]'
+#  blog_scrape:
+#    title_xpath: '//h1//text()'
+#    date_xpath: '(//div[@class="meta"]//time//text())[1]'
+#    date_format: '%d %b, %Y'
+#    blog_paragraphs_xpath: '//app-paragraph-rte//text()'
+#    key_words: 'android,malicious'
+#Malwarebytes:
+#  search_link: 'https://blog.malwarebytes.com/?s=android%20malicious'
+#  max_timeout: 20
+#  max_page_limit: 100
+#  suitable_page_wait_time: 5
+#  page_scrape_config:
+#    page_links_xpath: '//h2//a//@href'
+#    next_page_xpath: '//p[@id="pbd-alp-load-posts"]//a[@class="bluecta-lg load-more-posts"]'
+#  blog_scrape:
+#    title_xpath: '//h1//text()'
+#    date_xpath: '//div[@id="content"]//p//span//text()'
+#    date_format: '%B %d, %Y'
+#    blog_paragraphs_xpath: '//div[@id="articleBody"]//text()'
+#    key_words: 'android,malicious'
+#Sophos:
+#  search_link: 'https://nakedsecurity.sophos.com/?s=android+malicious'
+#  max_timeout: 20
+#  max_page_limit: 300
+#  suitable_page_wait_time: 5
+#  page_scrape_config:
+#    page_links_xpath: '//h1[@class="result-title"]//a//@href'
+#    next_page_xpath: '//section[@class="load-more"]//a'
+#  blog_scrape:
+#    title_xpath: '//h1[@class="entry-title"]//text()'
+#    date_xpath: '(//time//@datetime)[1]'
+#    date_format: '%Y-%m-%d'
+#    parse_date_string: 10
+#    blog_paragraphs_xpath: '//div[@class="entry-content"]//text()'
+#    key_words: 'android,malicious'
+KasperkyLab:
+  search_link: 'https://www.kaspersky.com/blog/?s=android+malicious'
+  max_timeout: 20
+  max_page_limit: 300
+  suitable_page_wait_time: 5
+  search_action_config:
+    click_search:
+      action: 'click'
+      element_xpath: '//p[@class="gdprButton"]'
+  page_scrape_config:
+    page_links_xpath: '//h3[@class="c-card__title"]//a//@href'
+    next_page_xpath: '//li[@class="c-pagination__item--next"]//a'
+  blog_scrape:
+    title_xpath: '//h1//text()'
+    date_xpath: '//li[@class="c-article__time c-article__meta-spacer"]//p//time//@datetime'
+    date_format: '%Y-%m-%d'
+    parse_date_string: 10
+    blog_paragraphs_xpath: '//div[@class="c-page"]//text()'
+    key_words: 'android,malicious'
+#Fortinet:
+#  search_link: 'https://www.fortinet.com/blog/search.html?q=android+malicious'
+#  max_timeout: 20
+#  max_page_limit: 300
+#  suitable_page_wait_time: 5
+#  search_action_config:
+#    wait_five_seconds:
+#      action: 'wait'
+#      element_value: 5
+#    click_search:
+#      action: 'click'
+#      element_xpath: '//button[@id="onetrust-accept-btn-handler"]'
+#    wait_five_more_seconds:
+#      action: 'wait'
+#      element_value: 5
+#  page_scrape_config:
+#    page_links_xpath: '//div[@class="sr-title "]//a//@href'
+#    next_page_xpath: '//button[@id="btn_load_more"]'
+#  blog_scrape:
+#    title_xpath: '//h1//text()'
+#    date_xpath: '//meta[@property="article:published_time"]//@content'
+#    date_format: '%Y-%m-%d'
+#    parse_date_string: 10
+#    blog_paragraphs_xpath: '//div[@id="sblogs"]//text() | //div[@class="text-container"]//text() | //div[contains(@class,"cmp cmp-text")]//text()'
+#    key_words: 'android,malicious'
+#PaloAltoNetworks:
+#  search_link: 'https://unit42.paloaltonetworks.com/?search_field=android%20malicious&pg=1'
+#  max_timeout: 20
+#  max_page_limit: 300
+#  suitable_page_wait_time: 5
+#  search_action_config:
+#    wait_five_seconds:
+#      action: 'wait'
+#      element_value: 5
+#    click_close_button:
+#      action: 'click'
+#      element_xpath: '//button[@class="optanon-alert-box-close banner-close-button"]'
+#      wait_five_more_seconds:
+#        action: 'wait'
+#        element_value: 5
+#  page_scrape_config:
+#    page_links_xpath: '//h3//a//@href'
+#    next_page_xpath: '(//div[contains(@class, "loadmore")]//button)[2]'
+#  blog_scrape:
+#    title_xpath: '//h1//text()'
+#    date_xpath: '//div[@class="container"]//p//time//@datetime'
+#    date_format: '%Y-%m-%d'
+#    parse_date_string: 10
+#    blog_paragraphs_xpath: '//div[@class="container"]//text()'
+#    key_words: 'android,malicious'
+#Cylance: # Acquired by Blackberry as of Feb 2019
+#  search_link: 'https://blogs.blackberry.com/en/search#q=android%20malicious&t=Blogs&sort=date%20descending'
+#  max_timeout: 20
+#  max_page_limit: 300
+#  suitable_page_wait_time: 5
+#  search_action_config:
+#    wait_five_seconds:
+#      action: 'wait'
+#      element_value: 5
+#    click_search:
+#      action: 'click'
+#      element_xpath: '//img[@alt="Close Button"]'
+#    wait_five_more_seconds:
+#      action: 'wait'
+#      element_value: 5
+#  page_scrape_config:
+#    page_links_xpath: '//a[@class="CoveoResultLink"]//@href'
+#    next_page_xpath: '//a[@title="Next"]'
+#  blog_scrape:
+#    title_xpath: '(//h1//text())[1]'
+#    date_xpath: '(//div[@class="categorydateauthor"]//text())[5]'
+#    date_format: '%m.%d.%y'
+#    parse_date_string: 8
+#    blog_paragraphs_xpath: '//div[@class="blogsection"]//text()'
+#    key_words: 'android,malicious'
+#CarbonBlack: #now acquired by VMWare as of Oct 2019
+#  search_link: 'https://blogs.vmware.com/security/?s=android+malicious'
+#  max_timeout: 20
+#  max_page_limit: 300
+#  suitable_page_wait_time: 5
+#  page_scrape_config:
+#    page_links_xpath: '//h3//a//@href'
+#    next_page_xpath: '//*[text()="❯"]'
+#  blog_scrape:
+#    title_xpath: '//h1[@itemprop="headline"]//text()'
+#    date_xpath: '//meta[@property="article:published_time"]//@content'
+#    parse_date_string: 10
+#    date_format: '%Y-%m-%d'
+#    blog_paragraphs_xpath: '//div[@class="article-content"]//text()'
+#    key_words: 'android,malicious'
+#KasperkyLab: #Securelist
+#  search_link: 'https://securelist.com/?s=android%20malicious'
+#  max_timeout: 20
+#  max_page_limit: 300
+#  suitable_page_wait_time: 5
+#  search_action_config:
+#    click_search:
+#      action: 'click'
+#      element_xpath: '//p[@class="gdprButton"]'
+#  page_scrape_config:
+#    page_links_xpath: '//header[@class="c-card__header"]//a//@href'
+#    next_page_xpath: '(//*[text() = "Load more"])[1]'
+#  blog_scrape:
+#    title_xpath: '//h1//text()'
+#    date_xpath: '(//article[@class="c-article"]//time//@datetime)[1]'
+#    parse_date_string: 10
+#    date_format: '%Y-%m-%d'
+#    blog_paragraphs_xpath: '//div[@class="c-article__main"]//text()'
+#    key_words: 'android,malicious'
+#Kaspersky: #Securelist
+#  search_link: 'https://securelist.com/?s=android%20malicious'
+#  max_timeout: 20
+#  max_page_limit: 300
+#  suitable_page_wait_time: 5
+#  search_action_config:
+#    wait_five_seconds:
+#      action: 'wait'
+#      element_value: 5
+#    click_search:
+#      action: 'click'
+#      element_xpath: '//p[@class="gdprButton"]'
+#    wait_five_more_seconds:
+#      action: 'wait'
+#      element_value: 5
+#  page_scrape_config:
+#    page_links_xpath: '//header[@class="c-card__header"]//a//@href'
+#    next_page_xpath: '(//*[text() = "Load more"])[1]'
+#  blog_scrape:
+#    title_xpath: '//h1//text()'
+#    date_xpath: '(//article[@class="c-article"]//time//@datetime)[1]'
+#    parse_date_string: 10
+#    date_format: '%Y-%m-%d'
+#    blog_paragraphs_xpath: '//div[@class="c-article__main"]//text()'
+#    key_words: 'android,malicious'
+#Cybereason:
+#  search_link: 'https://www.cybereason.com/hs-search-results?term=android+malicious&type=BLOG_POST&type=LISTING_PAGE'
+#  max_timeout: 20
+#  max_page_limit: 300
+#  suitable_page_wait_time: 5
+#  search_action_config:
+#    wait_five_seconds:
+#      action: 'wait'
+#      element_value: 5
+#    click_search:
+#      action: 'click'
+#      element_xpath: '//a[@id="hs-eu-confirmation-button"]'
+#    wait_five_more_seconds:
+#      action: 'wait'
+#      element_value: 5
+#  page_scrape_config:
+#    page_links_xpath: '//div[@class="text-content-bundle"]//a//@href'
+#    next_page_xpath: '//*[text()="Next page >"]'
+#  blog_scrape:
+#    title_xpath: '(//h1//span//text())[1]'
+#    date_xpath: '//p[@class="date-and-duration"]//span[@class="publish-date"]//text()'
+#    date_format: '%B %d, %Y |'
+#    blog_paragraphs_xpath: '//div[@class="cr-mln__blog-post"]//text()'
+#    key_words: 'android,malicious'
+#Checkpoint:
+#  search_link: 'https://www.checkpoint.com/search-results/?Search=#stq=android%20malicious&stp=1'
+#  max_timeout: 20
+#  max_page_limit: 300
+#  suitable_page_wait_time: 5
+#  search_action_config:
+#    click_search:
+#      action: 'click'
+#      element_xpath: '(//a[@id="gdpr-accept"])'
+#    click_and_fill:
+#      action: 'click and fill'
+#      element_xpath: '//input[@id="st-search-input"]'
+#      element_value: 'android malicious'
+#    click:
+#      action: 'click'
+#      element_xpath: '//button[@name="Search"]'
+#    wait_for_results:
+#      action: 'wait'
+#      element_value: 5
+#  page_scrape_config:
+#    page_links_xpath: '//h3[@class="title"]//a//@href'
+#    next_page_xpath: '//a[@class="st-next"]'
+#  blog_scrape:
+#    title_xpath: '(//h1//text())[1]'
+#    date_xpath: '//meta[@property="article:published_time"]//@content'
+#    parse_date_string: 10
+#    date_format: '%Y-%m-%d'
+#    blog_paragraphs_xpath: '//div[@id="content"]//text()'
+#    key_words: 'android,malicious'
+#Bitdefender: nothing
+#CrowdStrike: nothing
+#Cylance: nothing
+#Cisco: nothing
+#FireEye: nothing
